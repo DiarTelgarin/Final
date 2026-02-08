@@ -1,3 +1,6 @@
+# Final
+Telgarin Diar IT-2409 Final Project "Movie Website"
+
 # Movie Website
 A simple movie collection management system built with Node.js, Express.js, and MongoDB. Users can register, login, and manage their personal movie collections.
 
