@@ -379,9 +379,12 @@ app.get('/script.js', (req, res) => {
                     document.getElementById('director').value = m.director || '';
 
                     switchTab('add-movie');
+
+                    document.querySelector('#movieForm h2').textContent = 'Edit Movie';
+                    document.querySelector('#movieForm button[type="submit"]').textContent = 'Update Movie';
+
                     const form = document.getElementById('movieForm');
                     form.onsubmit = (e) => updateMovie(e, id);
-                    document.querySelector('#movieForm h2').textContent = 'Edit Movie';
                 } else {
                     show('error', result.message);
                 }
@@ -515,6 +518,8 @@ app.get('/script.js', (req, res) => {
             localStorage.removeItem('token');
             window.location.href = '/login';
         }
+
+        document.getElementById('movieForm').onsubmit = addMovie;
     `);
 });
 
@@ -618,7 +623,7 @@ app.get('/dashboard', (req, res) => {
                 </div>
 
                 <div id="add-movie" class="tab-content">
-                    <form id="movieForm" onsubmit="addMovie(event)">
+                    <form id="movieForm">
                         <h2>Add New Movie</h2>
                         <div class="form-group">
                             <label>Title</label>
