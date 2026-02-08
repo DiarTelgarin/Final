@@ -436,7 +436,7 @@ app.get('/script.js', (req, res) => {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.getElementById(name).classList.add('active');
-            event.target.classList.add('active');
+            if (event) event.target.classList.add('active');
         }
 
         async function searchOMDB() {
